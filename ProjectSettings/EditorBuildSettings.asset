@@ -8,8 +8,11 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/PO/POL_BLANC.unity
     guid: 74cc400e8d13dfd4d8e9358952d87eab
+  - enabled: 1
+    path: Assets/Scenes/SA/Sasha.unity
+    guid: 77307754e15864e4791f1883e55735a7
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
