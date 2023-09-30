@@ -1,43 +1,67 @@
-using System.Collections;
-using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Experimental.AI;
 using UnityEngine.InputSystem;
 
 public class PlayerController2DPlatformer : MonoBehaviour
 {
-    public float MoveSpeed = 2f;
+    [Header("Values")]
+    public float moveSpeed;
     private Vector2 vel;
-    private Vector3 Worldpos = new Vector3();
+    private Vector3 worldpos = new Vector3();
     private Vector3 mousePos = new Vector3();
+    private Vector3 ang;
+
+    [Header("References")]
+    public Camera cam;
     public Rigidbody rb;
      
-    public void OnMove(InputAction.CallbackContext context)
-    {
-        vel = context.ReadValue<Vector2>();
-    }
-    // Start is called before the first frame update
+   
     void Start()
     {
         rb = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
+
     void Update()
     {
-        Movement();
-        mousePos = Mouse.current.position.ReadValue();
-        mousePos.z = Camera.main.nearClipPlane;
-        Worldpos = Camera.main.ScreenToWorldPoint(mousePos);
-        Worldpos = new Vector3(Worldpos.x, 0, Worldpos.z);
+        Animation();
+        MouseWork();
     }
 
-    public void Movement()
+    void FixedUpdate()
+    {
+        Movement();
+    }
+
+    public void OnMove(InputAction.CallbackContext context)
+    {
+        vel = context.ReadValue<Vector2>();
+        Debug.Log(vel);
+    }
+
+    private void Movement()
     {
         Vector3 movement = new Vector3(vel.x, 0, vel.y);
 
-        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(Worldpos), 0.15f);
-
-        rb.AddForce(movement * MoveSpeed * Time.deltaTime, ForceMode.Force);
+        rb.AddForce(movement * 10f * moveSpeed, ForceMode.Force);
     }
+
+
+
+    //------------------------------------------------------------------------------------------------------------------------
+            //  Mouse and animation commands to shoot in the mouse's direction
+    //------------------------------------------------------------------------------------------------------------------------
+
+    private void MouseWork()
+    {
+        mousePos = Input.mousePosition;
+        worldpos = cam.ScreenToWorldPoint(mousePos);
+        ang = new Vector3(worldpos.x - transform.position.x, 0f, (worldpos.z + 2f) - transform.position.z);
+    }
+
+    private void Animation()
+    {
+        transform.forward = ang;
+    }   
 }
