@@ -11,8 +11,6 @@ public class PlayerController2DPlatformer : MonoBehaviour
     private Vector3 Worldpos = new Vector3();
     private Vector3 mousePos = new Vector3();
     public Rigidbody rb;
-    private Vector3 ang;
-    public Camera cam;
      
     public void OnMove(InputAction.CallbackContext context)
     {
@@ -28,19 +26,17 @@ public class PlayerController2DPlatformer : MonoBehaviour
     void Update()
     {
         Movement();
-        mousePos = Input.mousePosition;
-        //mousePos.z = Camera.main.nearClipPlane;
-        Worldpos = cam.ScreenToWorldPoint(mousePos);
+        mousePos = Mouse.current.position.ReadValue();
+        mousePos.z = Camera.main.nearClipPlane;
+        Worldpos = Camera.main.ScreenToWorldPoint(mousePos);
         Worldpos = new Vector3(Worldpos.x, 0, Worldpos.z);
-        ang = new Vector3(Worldpos.x - transform.position.x, 0, Worldpos.z - transform.position.z);
     }
 
     public void Movement()
     {
         Vector3 movement = new Vector3(vel.x, 0, vel.y);
 
-        //transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(ang), 0.15f);
-        transform.forward = ang;
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(Worldpos), 0.15f);
 
         rb.AddForce(movement * MoveSpeed * Time.deltaTime, ForceMode.Force);
     }
