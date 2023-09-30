@@ -1817,7 +1817,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 10
+  orthographic size: 11
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1841,13 +1841,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1560768056}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.66588163, y: 0, z: 0, w: 0.7460574}
-  m_LocalPosition: {x: 0, y: 20, z: -3.5}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -0.06, y: 20, z: -1.43}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 83.5, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!114 &1560768060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2023,7 +2023,7 @@ Transform:
   m_GameObject: {fileID: 1840644782}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.7}
+  m_LocalPosition: {x: 0, y: 0, z: 1.247}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2056,7 +2056,7 @@ GameObject:
   - component: {fileID: 1898338312}
   - component: {fileID: 1898338311}
   - component: {fileID: 1898338309}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bullet
   m_TagString: nuh_uh
   m_Icon: {fileID: 0}

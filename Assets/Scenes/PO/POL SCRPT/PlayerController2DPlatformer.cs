@@ -57,7 +57,7 @@ public class PlayerController2DPlatformer : MonoBehaviour
     {
         mousePos = Input.mousePosition;
         worldpos = cam.ScreenToWorldPoint(mousePos);
-        ang = new Vector3(worldpos.x - transform.position.x, 0f, (worldpos.z + 2f) - transform.position.z);
+        ang = new Vector3(worldpos.x - transform.position.x, 0f, worldpos.z - transform.position.z);
     }
 
     private void Animation()
