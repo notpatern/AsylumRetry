@@ -52,6 +52,7 @@ MonoBehaviour:
   m_Actions: {fileID: -944628639613478452, guid: 6064d46001482c445b088deaf49993da,
     type: 3}
   m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -239,7 +240,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 01a09b148022d9340a64835d12581da5, type: 2}
+  - {fileID: 2100000, guid: 05c59d28a0fe7f94a8d46f6a293154ef, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
