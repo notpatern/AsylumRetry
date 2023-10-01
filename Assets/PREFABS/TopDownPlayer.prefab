@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3084426462127076051}
+  - component: {fileID: 3266374888388796530}
   m_Layer: 0
   m_Name: TopDownPlayer
   m_TagString: Untagged
@@ -33,6 +34,19 @@ Transform:
   - {fileID: 889888200010829058}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3266374888388796530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 584341296508716786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d52912d7620fba542b869f44ded62175, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerObject: {fileID: 3301318436378290494}
 --- !u!1 &720354952807623049
 GameObject:
   m_ObjectHideFlags: 0
@@ -78,7 +92,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectile: {fileID: 4678104108893206206}
-  launchVelocity: 20
+  launchVelocity: 15
 --- !u!1 &3301318436378290494
 GameObject:
   m_ObjectHideFlags: 0
