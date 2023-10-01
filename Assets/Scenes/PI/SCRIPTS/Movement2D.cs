@@ -58,7 +58,7 @@ public class Movement2D : MonoBehaviour
 
     private void CheckGrounded()
     {
-        grounded = Physics.Raycast(transform.position, Vector3.down, 1.5f, isGround);
+        grounded = Physics.Raycast(transform.position, Vector3.down, 1.2f, isGround);
     }
 
     private void StateMachine()
@@ -86,6 +86,6 @@ public class Movement2D : MonoBehaviour
     }
     private void Move()
     {
-            rb.AddForce(Vector3.right * moveSpeed * airMultiplier * horizontalInput, ForceMode.Impulse);
+         rb.AddForce(Vector3.right * moveSpeed * airMultiplier * horizontalInput, ForceMode.Impulse);
     }
 }

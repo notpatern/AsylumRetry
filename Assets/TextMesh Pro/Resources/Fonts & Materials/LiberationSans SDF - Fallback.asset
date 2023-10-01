@@ -95,10 +95,10 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _GlowInner: 0
-    - _GlowOffset: 0
+    - _GlowInner: 1
+    - _GlowOffset: -0.33
     - _GlowOuter: 1
-    - _GlowPower: 0.25
+    - _GlowPower: 0.04
     - _GradientScale: 10
     - _LightAngle: 3.1416
     - _MaskSoftnessX: 0
@@ -146,10 +146,10 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _EnvMatrixRotation: {r: 0, g: 0, b: 0, a: 0}
-    - _FaceColor: {r: 1.3455192, g: 0.7829353, b: 0, a: 1}
-    - _GlowColor: {r: 0, g: 0, b: 0, a: 0.015686275}
+    - _FaceColor: {r: 1.7963738, g: 1.7963738, b: 1.7963738, a: 1}
+    - _GlowColor: {r: 181.01927, g: 82.82486, b: 121.09646, a: 0.043137256}
     - _MaskCoord: {r: 0, g: 0, b: 32767, a: 32767}
-    - _OutlineColor: {r: 4, g: 2.277162, b: 0, a: 0.03529412}
+    - _OutlineColor: {r: 0, g: 0, b: 0, a: 0.03529412}
     - _ReflectFaceColor: {r: 0, g: 0, b: 0, a: 1}
     - _ReflectOutlineColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
