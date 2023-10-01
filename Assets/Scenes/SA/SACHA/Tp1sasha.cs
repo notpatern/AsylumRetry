@@ -7,7 +7,6 @@ public class Tp1sasha : MonoBehaviour
     public Transform Player;
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("1");
-        Player.transform.position = new Vector3(-10f, Player.transform.position.y, Player.transform.position.z);
+        Player.transform.position = new Vector3(Player.transform.position.x, Player.transform.position.y, 1f);
     }
 }

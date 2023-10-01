@@ -95,6 +95,8 @@ public class PlayerController2DPlatformer : MonoBehaviour
     private void OnDeath()
     {
         died = true;
+        cd.StopOnDeath();
+        death.MoveTexture(new Vector3(rb.position.x, rb.position.z));
         death.DisplayDeath();
     }
 }
