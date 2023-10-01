@@ -37,7 +37,6 @@ public class PlayerController2DPlatformer : MonoBehaviour
     public void OnMove(InputAction.CallbackContext context)
     {
         vel = context.ReadValue<Vector2>();
-        Debug.Log(vel);
     }
 
     private void Movement()

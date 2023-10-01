@@ -1,14 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-    public class LaunchProjectile : MonoBehaviour
+    public class Bullet : MonoBehaviour
     {
         public GameObject projectile;
         public float launchVelocity = 700f;
 
-    void Update()
-    {
-        if (Input.GetButtonDown("Fire1"))
+        public void Fire()
         {
             Vector3 gaming = new Vector3(transform.position.x, transform.position.y, transform.position.z);
 
@@ -16,7 +14,6 @@ using UnityEngine;
             GameObject ball = Instantiate(projectile, gaming, transform.rotation);
 
             ball.GetComponent<Rigidbody>().AddForce(ball.transform.forward * launchVelocity, ForceMode.Impulse);
-
         }
+
     }
-}
