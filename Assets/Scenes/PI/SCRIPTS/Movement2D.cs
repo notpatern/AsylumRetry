@@ -29,12 +29,16 @@ public class Movement2D : MonoBehaviour
         Move();
         Jump();
         CheckGrounded();
+        SpeedControl();
+
     }
 
     private void Update()
     {
         MyInput();
         StateMachine();
+
+
     }
 
     private void Jump()
@@ -49,10 +53,7 @@ public class Movement2D : MonoBehaviour
 
     private void MyInput()
     {
-        if (moveSpeed < maxSpeed)
-        {
-            horizontalInput = Input.GetAxisRaw("Horizontal");
-        }
+        horizontalInput = Input.GetAxisRaw("Horizontal");
     }
 
     private void CheckGrounded()
@@ -73,7 +74,16 @@ public class Movement2D : MonoBehaviour
             airMultiplier = 0.7f;
         }
     }
+    private void SpeedControl()
+    {
+        Vector3 flatvel = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
 
+        if (flatvel.magnitude > maxSpeed)
+        {
+            Vector3 limitedvel = flatvel.normalized * maxSpeed;
+            rb.velocity = new Vector3(limitedvel.x, rb.velocity.y, limitedvel.z);
+        }
+    }
     private void Move()
     {
             rb.AddForce(Vector3.right * moveSpeed * airMultiplier * horizontalInput, ForceMode.Impulse);
