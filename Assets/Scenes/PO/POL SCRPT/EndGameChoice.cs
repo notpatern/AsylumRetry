@@ -29,7 +29,7 @@ public class EndGameChoice : MonoBehaviour
 
         if (Input.GetKeyUp(KeyCode.Escape))
         {
-            Application.Quit();
+            SceneManager.LoadScene("Corridor");
         }
     }
 }
