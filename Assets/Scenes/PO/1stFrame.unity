@@ -3322,7 +3322,7 @@ PrefabInstance:
     - target: {fileID: 1418893132191258225, guid: f16a42cb6f8f3c8489837b2242abc51a,
         type: 3}
       propertyPath: frameRate
-      value: 1
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 1418893132191258225, guid: f16a42cb6f8f3c8489837b2242abc51a,
         type: 3}
