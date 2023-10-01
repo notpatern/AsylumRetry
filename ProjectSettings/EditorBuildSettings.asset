@@ -17,8 +17,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PO/FirstFrame.unity
     guid: 4a81d7ac04896504cab3767820ad3be8
-  - enabled: 0
-    path: Assets/Scenes/PI/SedondFrame.unity
+  - enabled: 1
+    path: Assets/Scenes/PI/SecondFrame.unity
     guid: 5a8912963d2fe814189003ccfc8fa6be
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

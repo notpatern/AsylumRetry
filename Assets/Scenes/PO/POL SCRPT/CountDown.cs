@@ -19,9 +19,13 @@ public class CountDown : MonoBehaviour
         player = playerObject.GetComponent<PlayerController2DPlatformer>();
         textmeshPro.text = time.ToString();
         hasWon = false;
+    }
+
+    private void Start()
+    {
         i = 0;
     }
-    
+
     void Update()
     {
         WinCondition();
@@ -53,6 +57,7 @@ public class CountDown : MonoBehaviour
     private void DisplayWin()
     {
         time += Time.deltaTime;
+        i += Time.deltaTime;
         textmeshPro.fontSize = 12;
         if (time > 1)
         {
@@ -62,9 +67,8 @@ public class CountDown : MonoBehaviour
         else if (time < 1)
         {
             textmeshPro.text = " ";
-            i++;
         }
-        if (i == 3) { SceneManager.LoadScene("Corridor"); }
+        if (i > 6) { SceneManager.LoadScene("Corridor"); }
     }
 
     public void StopOnDeath()
