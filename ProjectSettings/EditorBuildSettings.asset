@@ -15,10 +15,10 @@ EditorBuildSettings:
     path: Assets/Scenes/SA/Corridor.unity
     guid: 77307754e15864e4791f1883e55735a7
   - enabled: 1
-    path: Assets/Scenes/PO/1stFrame.unity
+    path: Assets/Scenes/PO/FirstFrame.unity
     guid: 4a81d7ac04896504cab3767820ad3be8
   - enabled: 0
-    path: Assets/Scenes/PI/PIAIRE.unity
+    path: Assets/Scenes/PI/SedondFrame.unity
     guid: 5a8912963d2fe814189003ccfc8fa6be
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

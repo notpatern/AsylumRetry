@@ -31,6 +31,8 @@ public class PlayerController2DPlatformer : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         died = false;
+        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = true;
     }
 
 
