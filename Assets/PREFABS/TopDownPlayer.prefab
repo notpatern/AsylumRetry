@@ -520,6 +520,8 @@ MonoBehaviour:
   died: 0
   cam: {fileID: 0}
   rb: {fileID: 6545860162896505526}
+  cdObject: {fileID: 0}
+  deathObject: {fileID: 0}
 --- !u!114 &4588021594313573979
 MonoBehaviour:
   m_ObjectHideFlags: 0

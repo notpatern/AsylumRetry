@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class Death : MonoBehaviour
@@ -12,13 +13,23 @@ public class Death : MonoBehaviour
         pLife = GameObject.FindGameObjectsWithTag("pLife");
         pDeath = GameObject.FindGameObjectsWithTag("pDeath");
 
-        pLife[0].gameObject.SetActive(true);
+        foreach (GameObject i in pLife)
+        {
+            i.gameObject.SetActive(true);
+        }
+
         pDeath[0].gameObject.SetActive(false);
     }
 
     public void DisplayDeath()
     {
-        pLife[0].gameObject.SetActive(false);
+        
         pDeath[0].gameObject.SetActive(true);
+        
+
+        foreach (GameObject i in pLife)
+        {
+            i.gameObject.SetActive(false);
+        }
     }
 }
