@@ -11,15 +11,26 @@ public class PlayerController2DPlatformer : MonoBehaviour
     private Vector3 worldpos = new Vector3();
     private Vector3 mousePos = new Vector3();
     private Vector3 ang;
+    [HideInInspector] public bool died;
 
     [Header("References")]
     public Camera cam;
     public Rigidbody rb;
-     
-   
+    [SerializeField] GameObject cdObject;
+    CountDown cd;
+    [SerializeField] GameObject deathObject;
+    Death death;
+
+    private void Awake()
+    {
+        cd = cdObject.GetComponent<CountDown>();
+        death = deathObject.GetComponent<Death>();
+    }
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        died = false;
     }
 
 
@@ -62,5 +73,28 @@ public class PlayerController2DPlatformer : MonoBehaviour
     private void Animation()
     {
         transform.forward = ang;
-    }   
+    }
+
+   
+
+    //------------------------------------------------------------------------------------------------------------------------
+            //  Player Death
+    //------------------------------------------------------------------------------------------------------------------------
+
+    private void OnCollisionEnter(Collision collisioninfo)
+    {
+        if (cd.hasWon != true)
+        {
+            if (collisioninfo.collider.tag == "bullet")
+            {
+                OnDeath();
+            }
+        }
+    }
+
+    private void OnDeath()
+    {
+        died = true;
+        death.DisplayDeath();
+    }
 }
