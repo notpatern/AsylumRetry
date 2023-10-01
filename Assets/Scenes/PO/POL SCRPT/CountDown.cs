@@ -1,7 +1,7 @@
 using UnityEngine;
 using System;
-using UnityEngine.Rendering;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class CountDown : MonoBehaviour
 {
@@ -10,6 +10,7 @@ public class CountDown : MonoBehaviour
     TextMeshPro textmeshPro;
     [SerializeField] GameObject playerObject;
     PlayerController2DPlatformer player;
+    float i;
 
 
     void Awake()
@@ -18,6 +19,7 @@ public class CountDown : MonoBehaviour
         player = playerObject.GetComponent<PlayerController2DPlatformer>();
         textmeshPro.text = time.ToString();
         hasWon = false;
+        i = 0;
     }
     
     void Update()
@@ -60,7 +62,9 @@ public class CountDown : MonoBehaviour
         else if (time < 1)
         {
             textmeshPro.text = " ";
+            i++;
         }
+        if (i == 3) { SceneManager.LoadScene("Corridor"); }
     }
 
     public void StopOnDeath()
