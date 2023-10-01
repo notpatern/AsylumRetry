@@ -8,6 +8,9 @@ TagManager:
   - pLife
   - pDeath
   - box
+  - L2
+  - L3
+  - L4
   layers:
   - Default
   - TransparentFX
