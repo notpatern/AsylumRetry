@@ -1077,7 +1077,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 952141567
-  m_fontColor: {r: 1, g: 0.5235849, b: 0.75139296, a: 0.15686275}
+  m_fontColor: {r: 1, g: 0.5235849, b: 0.75139296, a: 0.12941177}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -3399,6 +3399,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1418893132191258225, guid: f16a42cb6f8f3c8489837b2242abc51a,
+        type: 3}
+      propertyPath: frameRate
+      value: 0.8333333
+      objectReference: {fileID: 0}
     - target: {fileID: 1418893132191258225, guid: f16a42cb6f8f3c8489837b2242abc51a,
         type: 3}
       propertyPath: bulletObject
