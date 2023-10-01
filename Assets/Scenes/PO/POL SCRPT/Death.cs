@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Death : MonoBehaviour
 {
@@ -19,6 +21,11 @@ public class Death : MonoBehaviour
         }
 
         pDeath[0].gameObject.SetActive(false);
+    }
+
+    public void MoveTexture(Vector2 position)
+    {
+        transform.position = new Vector3(position.x, transform.position.y, position.y);
     }
 
     public void DisplayDeath()

@@ -8,11 +8,14 @@ public class CountDown : MonoBehaviour
     [SerializeField] float time;
     [HideInInspector] public bool hasWon;
     TextMeshPro textmeshPro;
+    [SerializeField] GameObject playerObject;
+    PlayerController2DPlatformer player;
 
 
     void Awake()
     {
         textmeshPro = GetComponent<TextMeshPro>();
+        player = playerObject.GetComponent<PlayerController2DPlatformer>();
         textmeshPro.text = time.ToString();
         hasWon = false;
     }
@@ -20,7 +23,7 @@ public class CountDown : MonoBehaviour
     void Update()
     {
         WinCondition();
-        if (!hasWon)
+        if (!hasWon && !player.died)
         {
             CoundDown();
         }
@@ -58,5 +61,11 @@ public class CountDown : MonoBehaviour
         {
             textmeshPro.text = " ";
         }
+    }
+
+    public void StopOnDeath()
+    {
+        textmeshPro.fontSize = 9;
+        textmeshPro.text = "You Lose! <br>Enter to retry <br>Esc to leave";
     }
 }
