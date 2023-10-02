@@ -3322,11 +3322,6 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1418893132191258225, guid: f16a42cb6f8f3c8489837b2242abc51a,
         type: 3}
-      propertyPath: frameRate
-      value: 0.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 1418893132191258225, guid: f16a42cb6f8f3c8489837b2242abc51a,
-        type: 3}
       propertyPath: bulletObject
       value: 
       objectReference: {fileID: 2319620384010307720}

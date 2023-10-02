@@ -92,7 +92,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectile: {fileID: 4678104108893206206}
-  launchVelocity: 15
+  launchVelocity: 13
 --- !u!1 &3301318436378290494
 GameObject:
   m_ObjectHideFlags: 0

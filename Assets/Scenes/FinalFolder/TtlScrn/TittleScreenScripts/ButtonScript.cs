@@ -11,10 +11,10 @@ public class ButtonScript : MonoBehaviour
 
     private void Start()
     {
-        if (PlayerPrefs.GetInt("Level4") == 1)
+        if (PlayerPrefs.GetInt("Level1") == 1)
             Resume();
      
-        if (PlayerPrefs.GetInt("Level4") != 1)
+        if (PlayerPrefs.GetInt("Level1") != 1)
             Pause();
     }
 
@@ -61,5 +61,6 @@ public class ButtonScript : MonoBehaviour
         float sens = PlayerPrefs.GetFloat("Sensitivity");
         PlayerPrefs.DeleteAll();
         PlayerPrefs.SetFloat("Sensitivity", sens);
+        SceneManager.LoadScene("Corridor");
     }
 }

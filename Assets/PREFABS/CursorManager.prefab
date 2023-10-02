@@ -52,5 +52,5 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 1a7c32679e476ad4da69faba8a229d28, type: 3}
   - {fileID: 2800000, guid: db20012de8163954eba7a6598644d46c, type: 3}
   frameCount: 6
-  frameRate: 1.4
+  frameRate: 0.95
   bulletObject: {fileID: 0}

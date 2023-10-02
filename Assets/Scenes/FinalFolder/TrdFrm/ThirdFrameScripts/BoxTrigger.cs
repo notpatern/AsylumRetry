@@ -10,7 +10,9 @@ public class BoxTrigger : MonoBehaviour
     public Transform cam;
     public Transform player;
     public Transform trigger;
+    public Transform winText;
     private int lvlCheck;
+    float time;
 
     void Start()
     {
@@ -49,8 +51,13 @@ public class BoxTrigger : MonoBehaviour
 
     private void LoadNewScene()
     {
-        PlayerPrefs.SetInt("Level3", 1);
-        SceneManager.LoadScene("Corridor");
+        time += Time.deltaTime;
+        winText.position = new Vector3(53.5f, 15.6f, 0f);
+        if (time > 4)
+        {
+            PlayerPrefs.SetInt("Level3", 1);
+            SceneManager.LoadScene("Corridor");
+        }
     }
 
 
@@ -59,5 +66,4 @@ public class BoxTrigger : MonoBehaviour
         if (other.tag == "box")
             compteurBox -= 1;
     }
-
 }
