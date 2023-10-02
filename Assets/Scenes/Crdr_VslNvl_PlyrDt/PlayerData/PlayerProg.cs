@@ -30,6 +30,11 @@ public class PlayerProg : MonoBehaviour
         {
             PlayerPrefs.SetInt("Level4", 0);
         }
+
+        if (!PlayerPrefs.HasKey("Sensitivity"))
+        {
+            PlayerPrefs.SetFloat("Sensitivity", 5f);
+        }
     }
 
     private void Start()
@@ -76,7 +81,7 @@ public class PlayerProg : MonoBehaviour
             }
         }
 
-        if (PlayerPrefs.GetInt("Level4") == 1)
+        if (PlayerPrefs.GetInt("Level3") == 1)
         {
             foreach (GameObject i in l4)
             {

@@ -49,7 +49,7 @@ public class BoxTrigger : MonoBehaviour
 
     private void LoadNewScene()
     {
-        PlayerPrefs.SetInt("level3", 1);
+        PlayerPrefs.SetInt("Level3", 1);
         SceneManager.LoadScene("Corridor");
     }
 

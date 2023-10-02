@@ -22,14 +22,17 @@ public class PlayerCam : MonoBehaviour
 
     void Update()
     {
-        float mouseX = Input.GetAxisRaw("Mouse X") * sensX * 0.001f;
-        float mouseY = Input.GetAxisRaw("Mouse Y") * sensY * 0.001f;
+        if (!ButtonScript.Paused)
+        {
+            float mouseX = Input.GetAxisRaw("Mouse X") * sensX * PlayerPrefs.GetFloat("Sensitivity") * 0.5f * Time.deltaTime;
+            float mouseY = Input.GetAxisRaw("Mouse Y") * sensY * PlayerPrefs.GetFloat("Sensitivity") * 0.5f * Time.deltaTime;
 
-        yRotation += mouseX;
-        xRotation -= mouseY;
-        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+            yRotation += mouseX;
+            xRotation -= mouseY;
+            xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
-        Camera.rotation = Quaternion.Euler(xRotation, yRotation, 0);
-        orientation.rotation = Quaternion.Euler(0, yRotation, 0);
+            Camera.rotation = Quaternion.Euler(xRotation, yRotation, 0);
+            orientation.rotation = Quaternion.Euler(0, yRotation, 0);
+        }
     }
 }

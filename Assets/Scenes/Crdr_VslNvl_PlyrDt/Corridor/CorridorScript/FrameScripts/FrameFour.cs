@@ -7,6 +7,6 @@ public class FrameFour : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        SceneManager.LoadScene("FirstFrame");
+        SceneManager.LoadScene("FourthFrame");
     }
 }

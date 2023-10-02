@@ -1,29 +1,54 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ButtonScript : MonoBehaviour
 {
-    public GameObject canvas;
-    private bool GameIsPaused;
+    public GameObject canva;
+    public static bool Paused;
 
-
-    // Start is called before the first frame update
     private void Start()
     {
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
-        GameIsPaused = true;
+        if (PlayerPrefs.GetInt("Level4") == 1)
+            Resume();
+     
+        if (PlayerPrefs.GetInt("Level4") != 1)
+            Pause();
     }
 
-    // Update is called once per frame
-    public void Play()
+    void Update()
     {
-        Debug.Log("Play");
-        canvas.gameObject.SetActive(false);
-        Cursor.visible = false;
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (Paused)
+            {
+                Resume();
+            }
+            else
+            {
+                Pause();
+            }
+        }
+    }
+
+    public void Resume()
+    {
+        canva.SetActive(false);
         Time.timeScale = 1f;
-        GameIsPaused = false;
+        Paused = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
+
+    void Pause()
+    {
+        canva.SetActive(true);
+        Time.timeScale = 0f;
+        Paused = true;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     public void Quit()
@@ -33,24 +58,8 @@ public class ButtonScript : MonoBehaviour
 
     public void Reset()
     {
+        float sens = PlayerPrefs.GetFloat("Sensitivity");
         PlayerPrefs.DeleteAll();
-    }
-
-    public void Update()
-    {
-        Debug.Log(GameIsPaused.ToString());
-        if (Input.GetKeyDown(KeyCode.Escape) & GameIsPaused == false)
-        {
-            Debug.Log("Caca");
-            canvas.gameObject.SetActive(true);
-            Cursor.visible = true;
-            Time.timeScale = 0f;
-            GameIsPaused = true;
-        }
-
-        if (Input.GetKeyDown(KeyCode.Escape) && GameIsPaused)
-        {
-            Play();
-        }
+        PlayerPrefs.SetFloat("Sensitivity", sens);
     }
 }

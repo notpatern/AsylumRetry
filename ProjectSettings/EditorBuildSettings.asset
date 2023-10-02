@@ -23,5 +23,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FinalFolder/WhtRm/WhiteRoom.unity
     guid: 74cc400e8d13dfd4d8e9358952d87eab
+  - enabled: 1
+    path: Assets/Scenes/Crdr_VslNvl_PlyrDt/VslNvl/FourthFrame.unity
+    guid: 12db19a4af26fe54694dbc7cc050a0b3
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
