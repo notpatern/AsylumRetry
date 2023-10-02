@@ -119,7 +119,7 @@ Rigidbody:
   m_GameObject: {fileID: 4729404490645615485}
   serializedVersion: 4
   m_Mass: 5
-  m_Drag: 5
+  m_Drag: 7
   m_AngularDrag: 0
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
@@ -152,7 +152,7 @@ MonoBehaviour:
   isGround:
     serializedVersion: 2
     m_Bits: 8
-  moveSpeed: 15
+  moveSpeed: 8
   maxSpeed: 15
   jumpForce: 100
   jumpCooldown: 0.1
