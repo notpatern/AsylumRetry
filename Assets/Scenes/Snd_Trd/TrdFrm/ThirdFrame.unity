@@ -2782,7 +2782,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 1401378981}
   player: {fileID: 654956501632915147}
-  trigger: {fileID: 0}
+  trigger: {fileID: 743880813}
 --- !u!1 &755911962
 GameObject:
   m_ObjectHideFlags: 0
@@ -4302,7 +4302,7 @@ Transform:
   m_GameObject: {fileID: 1650028598}
   serializedVersion: 2
   m_LocalRotation: {x: -0.4999995, y: 0.5000007, z: 0.5000004, w: -0.4999995}
-  m_LocalPosition: {x: 22.65, y: -3.2055016, z: 0.3755}
+  m_LocalPosition: {x: 22.65, y: -3.37, z: 0.3755}
   m_LocalScale: {x: 4.043725, y: 25.752607, z: 0.6266}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5085,8 +5085,8 @@ Transform:
   m_GameObject: {fileID: 2076273110}
   serializedVersion: 2
   m_LocalRotation: {x: -0.4999995, y: 0.5000007, z: 0.5000004, w: -0.4999995}
-  m_LocalPosition: {x: 19.88, y: -13.859999, z: 0.36810112}
-  m_LocalScale: {x: 4.043725, y: 25.768068, z: 1}
+  m_LocalPosition: {x: 20.0914, y: -13.859999, z: 0.36810112}
+  m_LocalScale: {x: 4.043725, y: 25.768068, z: 0.5773}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 413844250}
