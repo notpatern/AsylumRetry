@@ -6,49 +6,53 @@ using UnityEngine.SceneManagement;
 
 public class BoxTrigger : MonoBehaviour
 {
-    public static int compteurBox = 3;
+    public static int compteurBox;
     public Transform cam;
     public Transform player;
-    private bool levelOne;
+    public Transform trigger;
+    private int lvlCheck;
 
-    // Start is called before the first frame update
     void Start()
     {
-        levelOne = true;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-     
+        lvlCheck = 0;
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "box")
         {
-            Debug.Log("Toby");
             compteurBox += 1;
         }
         
         if (compteurBox == 4)
         {
-            if(levelOne)
-            {
-                cam.transform.position = new Vector3(53.6f, 16.12f, -19.75f);
-                player.position = new Vector3(29.2999992f, 3.79999995f, 16.6119995f);
-                compteurBox = 0;
-                levelOne = false;
-            }
-            else
-            {
-                Debug.Log("Caca");
-                compteurBox = 0;
-                PlayerPrefs.SetInt("level3", 1);
-                SceneManager.LoadScene("Corridor");
-            }
+            MoveObjects();
+            lvlCheck += 1;
         }
     }
+
+    private void Update()
+    {
+        if (lvlCheck == 2)
+        {
+            LoadNewScene();
+        }
+    }
+
+    private void MoveObjects()
+    {
+        cam.transform.position = new Vector3(53.6f, 16.12f, -19.75f);
+        player.position = new Vector3(29.2999992f, 3.79999995f, 16.6119995f);
+        trigger.position = new Vector3(63.57f, 2.4f, 16.4f);
+    }
+
+    private void LoadNewScene()
+    {
+        PlayerPrefs.SetInt("level3", 1);
+        SceneManager.LoadScene("Corridor");
+    }
+
+
     private void OnTriggerExit(Collider other)
     {
         if (other.tag == "box")

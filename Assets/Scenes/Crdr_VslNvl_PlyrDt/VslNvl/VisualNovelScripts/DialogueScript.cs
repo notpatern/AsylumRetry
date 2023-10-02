@@ -73,7 +73,7 @@ public class DialogueScript : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.Mouse0) && (dialogueIndex + 1 == dialogueLines.Count))
         {
-            PlayerPrefs.SetInt("Level3", 1);
+            PlayerPrefs.SetInt("Level4", 1);
             SceneManager.LoadScene("WhiteRoom");
         }
     }
