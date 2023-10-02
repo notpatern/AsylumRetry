@@ -15,6 +15,7 @@ public class BoxTrigger : MonoBehaviour
     void Start()
     {
         lvlCheck = 0;
+        compteurBox = 0;
     }
 
     private void OnTriggerEnter(Collider other)
