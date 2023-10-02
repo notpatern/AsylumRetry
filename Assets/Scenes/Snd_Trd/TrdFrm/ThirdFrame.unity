@@ -2570,6 +2570,7 @@ GameObject:
   - component: {fileID: 743880811}
   - component: {fileID: 743880810}
   - component: {fileID: 743880814}
+  - component: {fileID: 743880815}
   m_Layer: 0
   m_Name: Triggger
   m_TagString: Untagged
@@ -2675,6 +2676,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecca9e180e5cc27498f78a2287b02386, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &743880815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 743880809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2b00fa5a13919944baf23ec5eb05199, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 654956501632915147}
+  cam: {fileID: 1401378981}
 --- !u!1 &755911962
 GameObject:
   m_ObjectHideFlags: 0
@@ -5765,7 +5780,7 @@ Transform:
   m_GameObject: {fileID: 6252725284848573608}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -19.56, y: 60.84, z: 17.25}
+  m_LocalPosition: {x: 34.78, y: 37.42, z: 17.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
