@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Tp1 : MonoBehaviour
+public class TeleporterOne : MonoBehaviour
 {
     public Transform Player;
     private void OnTriggerEnter(Collider other)
