@@ -7,6 +7,6 @@ public class FrameThree : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        SceneManager.LoadScene("FirstFrame");
+        SceneManager.LoadScene("ThirdFrame");
     }
 }

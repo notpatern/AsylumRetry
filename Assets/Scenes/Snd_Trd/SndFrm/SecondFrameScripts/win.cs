@@ -24,6 +24,7 @@ public class win : MonoBehaviour
             }
             if (time < 0)
             {
+                PlayerPrefs.SetInt("Level2", 1);
                 SceneManager.LoadScene("Corridor");
             }
         }

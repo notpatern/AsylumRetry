@@ -20,5 +20,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Snd_Trd/SndFrm/SecondFrame.unity
     guid: 5a8912963d2fe814189003ccfc8fa6be
+  - enabled: 1
+    path: Assets/Scenes/Snd_Trd/TrdFrm/ThirdFrame.unity
+    guid: 1629fffae94aa4445918c3589c72119e
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
