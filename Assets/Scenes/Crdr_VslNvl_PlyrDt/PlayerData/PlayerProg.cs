@@ -34,7 +34,6 @@ public class PlayerProg : MonoBehaviour
 
     private void Start()
     {
-        PlayerPrefs.SetInt("Level1", 1);
         l2 = GameObject.FindGameObjectsWithTag("L2");
         l3 = GameObject.FindGameObjectsWithTag("L3");
         l4 = GameObject.FindGameObjectsWithTag("L4");
