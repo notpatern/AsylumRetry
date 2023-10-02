@@ -44,6 +44,7 @@ public class CountDown : MonoBehaviour
         if (time < 0)
         {
             hasWon = true;
+            PlayerPrefs.SetInt("Level1", 1);
         }
     }
 

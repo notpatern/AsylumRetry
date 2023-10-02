@@ -34,6 +34,7 @@ public class PlayerProg : MonoBehaviour
 
     private void Start()
     {
+        PlayerPrefs.SetInt("Level1", 1);
         l2 = GameObject.FindGameObjectsWithTag("L2");
         l3 = GameObject.FindGameObjectsWithTag("L3");
         l4 = GameObject.FindGameObjectsWithTag("L4");
@@ -48,7 +49,47 @@ public class PlayerProg : MonoBehaviour
     {
         if (PlayerPrefs.GetInt("Level1") == 1)
         {
+            foreach (GameObject i in l2)
+            {
+                i.gameObject.SetActive(true);
+            }
+        }
+        else
+        {
+            foreach (GameObject i in l2)
+            {
+                i.gameObject.SetActive(false);
+            }
+        }
 
+        if (PlayerPrefs.GetInt("Level2") == 1)
+        {
+            foreach (GameObject i in l3)
+            {
+                i.gameObject.SetActive(true);
+            }
+        }
+        else
+        {
+            foreach (GameObject i in l3)
+            {
+                i.gameObject.SetActive(false);
+            }
+        }
+
+        if (PlayerPrefs.GetInt("Level4") == 1)
+        {
+            foreach (GameObject i in l4)
+            {
+                i.gameObject.SetActive(true);
+            }
+        }
+        else
+        {
+            foreach (GameObject i in l4)
+            {
+                i.gameObject.SetActive(false);
+            }
         }
     }
 }
