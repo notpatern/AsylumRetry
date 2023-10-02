@@ -13,21 +13,25 @@ public class DialogueScript : MonoBehaviour
     public static int dialogueIndex;
     [SerializeField] TextMeshPro text;
 
+    [SerializeField] Transform cam;
+    [SerializeField] Transform textPosition;
+
+
     private void Start()
     {
         dialogueLines = new List<string>
         {
-            "*rumble*",
+            "...",
             "<i>???</i>",
             "It is time",
             "<i>Who are you?</i>",
-            "*rumbles*",
+            "...",
             "<i>You’re here for me aren’t you?</i>",
             "I am.",
             "<i>Can’t I just stay here?</i>",
             "Unfortunately no.",
             "The choice is not yours, it never was.",
-            "<i>Oh ok.</i>",
+            "<i>...</i>",
             "Your life here was but everlasting.",
             "None of the memories you’ve made will change the way things were but they have changed the way things are.",
             "<i>But I don’t want to go back.</i>",
@@ -58,6 +62,7 @@ public class DialogueScript : MonoBehaviour
         Debug.Log(dialogueIndex.ToString());
         IncrementIndex();
         DisplayText();
+        SceneryChanges();
     }
 
     private void DisplayText()
@@ -76,5 +81,29 @@ public class DialogueScript : MonoBehaviour
             PlayerPrefs.SetInt("Level4", 1);
             SceneManager.LoadScene("WhiteRoom");
         }
+    }
+
+    private void SceneryChanges()
+    {
+        if (dialogueLines[dialogueIndex][0] == '<')
+        {
+            cam.position = new Vector3(108.2945f, 1f, -10f);
+            textPosition.position = new Vector3(107f, 0f, 82.2f);
+        }
+      
+
+        else if (dialogueLines[dialogueIndex][0] == '*')
+        {
+            cam.position = new Vector3(218.114493f, 1f, -10f);
+            textPosition.position = new Vector3(217, 0f, 82.2f);
+        }
+    
+
+        else
+        {
+            cam.position = new Vector3(0f, 1f, -10f);
+            textPosition.position = new Vector3(-1.3f, 0f, 82.2f);
+        }
+ 
     }
 }
