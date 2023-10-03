@@ -71,6 +71,7 @@ public class Movement2D : MonoBehaviour
             airMultiplier = 0.7f;
         }
     }
+    
     private void SpeedControl()
     {
         var flatVel = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
@@ -82,6 +83,7 @@ public class Movement2D : MonoBehaviour
         rb.velocity = new Vector3(limitedVel.x, rb.velocity.y, limitedVel.z);
 
     }
+    
     private void Move()
     {
          rb.AddForce(Vector3.right * horizontalInput * moveSpeed * airMultiplier, ForceMode.Impulse);
