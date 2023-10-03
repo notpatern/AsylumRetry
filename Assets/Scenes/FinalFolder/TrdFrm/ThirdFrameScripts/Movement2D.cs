@@ -14,7 +14,6 @@ public class Movement2D : MonoBehaviour
     public float moveSpeed;
     public float maxSpeed;
     public float jumpForce;
-    public float jumpCooldown;
     public float airMultiplier;
 
     void Start()
@@ -30,25 +29,23 @@ public class Movement2D : MonoBehaviour
         Jump();
         CheckGrounded();
         SpeedControl();
-
     }
 
     private void Update()
     {
         MyInput();
         StateMachine();
-
-
     }
 
     private void Jump()
     {
-        if (Input.GetKey(KeyCode.Space) && grounded)
-        {
-            rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
-
-            rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
-        }
+        if (!Input.GetKey(KeyCode.Space))
+            return;
+        if (!grounded)
+            return;
+        
+        rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+        rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
     }
 
     private void MyInput()
@@ -68,7 +65,7 @@ public class Movement2D : MonoBehaviour
             rb.drag = 5f;
             airMultiplier = 1f;
         }
-        if (!grounded)
+        else
         {
             rb.drag = 0f;
             airMultiplier = 0.7f;
@@ -76,16 +73,17 @@ public class Movement2D : MonoBehaviour
     }
     private void SpeedControl()
     {
-        Vector3 flatvel = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+        var flatVel = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
 
-        if (flatvel.magnitude > maxSpeed)
-        {
-            Vector3 limitedvel = flatvel.normalized * maxSpeed;
-            rb.velocity = new Vector3(limitedvel.x, rb.velocity.y, limitedvel.z);
-        }
+        if (flatVel.magnitude <= maxSpeed)
+            return;
+
+        var limitedVel = flatVel.normalized * maxSpeed;
+        rb.velocity = new Vector3(limitedVel.x, rb.velocity.y, limitedVel.z);
+
     }
     private void Move()
     {
-         rb.AddForce(Vector3.right * moveSpeed * airMultiplier * horizontalInput, ForceMode.Impulse);
+         rb.AddForce(Vector3.right * horizontalInput * moveSpeed * airMultiplier, ForceMode.Impulse);
     }
 }
